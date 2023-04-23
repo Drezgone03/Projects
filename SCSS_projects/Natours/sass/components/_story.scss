@@ -1,0 +1,91 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: rgba($color-white, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0);
+  }
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    // background-color: orangered; Samo za test, dok nismo dodali  sliku.
+    float: left;
+
+    // -webkit-shape-outside: circle(50% at 50% 50%);
+    // shape-outside: circle(50% at 50% 50%);
+
+    // Ovaj gore properti radi samo kad mu se dodeli width, height i float, inace nece raditi.Well the first number we put here is actually the radius of the circle, and so if we say 50%, then the radius will be half the height and the width of the element and so in this case that will be 7.5rem and so if the radius is 7.5rem then the diameter of the circle will be 15 and that's exactly the size of the shape here, right? And then we say 50% 50% because that means that is the center of the circle so exactly the center horizontally and vertically. Da bi slika bila u obliku kruga, koristimo na kraju clip-path properti sa istim osobinama kao shape-outside ( circle(50% at 50% 50%) ).
+
+    // -webkit-clip-path: circle(50% at 50% 50%);
+    // clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+      border-radius: none;
+    }
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
+  }
+
+  &__img {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    backface-visibility: hidden;
+    transition: all 0.5s;
+    //So remember once again, flexible images for responsive web design, they always need a width, height in this case. Always, without exception, okay?
+  }
+
+  &__text {
+    transform: skewX(12deg);
+
+    @include respond(phone) {
+      transform: skewX(0);
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden; // kad hoverujemo sliku tekst se pomeri od dole ka gore, i slika se zatrese, da bi popravili to, koristimo ovaj properti.
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%); // brightness properti - Value lower than 100% makes it darker,and a value above 100% makes it brighter.
+  }
+}

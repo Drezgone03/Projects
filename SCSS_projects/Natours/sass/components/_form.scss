@@ -1,0 +1,108 @@
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, 0.5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    display: block;
+    transition: all 0.3s;
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
+
+    &:focus {
+      outline: none; // da obrisemo plavi border unutar placeholdera.
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 3px solid $color-primary;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    } // narandzasta linija u formi za ime i email, pojavljuje se kada ukucamo neispravan email ili dok ne ukucamo ime.
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+      // menjamo boju unutar placeholdera
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden; // ovde koristimo i opacity i visibility jer ako bi samo koristili visib. bez opacity ne bi imalo vajde, jer ne bi mogli da izvrsimo animaciju.
+    transform: translateY(-4rem);
+  }
+  // kada selektujemo placeholder i pocnemo da kucamo da tekst "Full Name" nestane i pojavi se ispod.
+
+  // So what is an adjacent sibling? Well, it's just a sibling that comes immediately after the element that we select in the first place. We can use the adjacent sibling because the sibling is right next to the first element, i zbog toga koristimo znak +. Da je igrom slucaja izmedju ta dva siblings-a neki drugi element npr div onda bismo morali koristiti znak ~ So this is the general sibling selector, so this one works if there are more levels in-between.The label needs to be after the input, which is the case here, in order to be selected with  the sibling selector.
+
+  &__radio-group {
+    width: 49%;
+    display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-label {
+    font-size: $default-font-size;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem;
+  }
+
+  &__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $color-primary;
+    border-radius: 50%;
+    display: inline-block; // ovi propertiji rade ako je vamo inline-block, ili block element.
+    position: absolute;
+    left: 0;
+    top: -0.4rem;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
+      position: absolute; // moramo postaviti na parent (__radio-button) position:relative, medjutim tamo je vec postavljena na absolute, tako da nije problem ni to, radice svakako.
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $color-primary;
+      opacity: 0;
+      transition: all 0.2s;
+    }
+    // And remember, each time that we use a pseudo-element ::after u ovom slucaju, we have to actually specify its content property content: "".
+  }
+
+  &__radio-input:checked + &__radio-label &__radio-button::after {
+    opacity: 1;
+  }
+  // So as soon as we hit the label element,the radio-input becomes checked.So we have this checked pseudo-class available to us.And what we do then is to simply select the sibling of that one, and then the child because that's the one that we want to change each time that the radio input is selected.And what we want to do, we want to give it an opacity 1.
+}

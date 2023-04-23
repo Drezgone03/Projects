@@ -1,0 +1,54 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; /* 62.5% = 10px, to dobijemo tako sto ako uzmemo u obizr da je 100% = 16px sto je default vrednost, 10px dobijemo tako sto 10 podelimo sa 16, i dobijemo 62.5, a 1rem = 10px, koristimo rem  u ovom slucaju jer kad promenimo root od font size sto je 62.5 svuda ce se promeniti */
+
+  // ems and rems in media queries, they are not affected by a root font size setting, by this settings up 62.5%. What that means is that one rem or one em in a media query is always just equal to the font size which is coming from the browser, and that's by default 16px.
+
+  // Bitan je redosled, jer npr da je 500px, i tab-land i tab-port ispunjavaju uslov, tako da ce se racunati onaj koji je poslednji a to je u ovom slucaju tab-port, i primenice odg. font.
+
+  // @include respond(phone) {
+  //   font-size: 50%;       // ovaj nam ne treba zato sto tab-port vec ima 50% isto, pa nam ne treba 2.
+  // }
+
+  @include respond(tab-land) {
+    // width < 1200px
+    font-size: 56.25%; // ovo ovde je zapravo content koji je u mixins.scss-u.
+    // 1rem = 9px, 9/16 = 56.25%.
+  }
+
+  @include respond(tab-port) {
+    // width < 900px
+    font-size: 50%;
+    // 1rem = 8px, 8/16 = 50%.
+  }
+
+  @include respond(big-desktop) {
+    // width > 1800px
+    font-size: 75%;
+    // 1rem = 12px, 12/16 = 75%.
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+
+  // da se ukloni onaj beli okvir oko stranice na uredjajima ispod 900px.
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+
+  // kada selektujemo neki tekst da primeni gore navedene propertije.
+}

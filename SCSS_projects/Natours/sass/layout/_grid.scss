@@ -1,0 +1,72 @@
+.row {
+  max-width: $grid-width; // $grid-width je 114rem, definisan u variables. So max-width means is that if we have enough available space, then it will have the width that we specified but if there is not enough width, so basically if the viewport is smaller than width that we specified here, so in this case, if the viewport is smaller than 114 rem, then it will simply fill 100% of the available space that it has.
+
+  // background-color: #eee;
+
+  margin: 0 auto; // Always center this row in the viewport. That's the trick that everyone uses to center block elements inside of another block element. 0 su gore i dole, a levo i desno je auto.
+
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical; // this 80 pixels ($gutter-vertical) we put it on all the rows except the last child.
+
+    @include respond(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
+  }
+
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+
+  @include clearfix;
+
+  [class^="col-"] {
+    // background-color: orangered;
+    float: left;
+
+    // [class^="col-"] -> Selektuj sve klase koje pocinju sa col-
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
+    }
+
+    @include respond(tab-port) {
+      width: 100% !important;
+    }
+  }
+
+  .col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+  }
+
+  .col-2-of-3 {
+    width: calc(
+      2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal}
+    );
+  }
+
+  .col-1-of-4 {
+    width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+  }
+
+  .col-2-of-4 {
+    width: calc(
+      2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal}
+    );
+  }
+
+  .col-3-of-4 {
+    width: calc(
+      3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal}
+    );
+  }
+}

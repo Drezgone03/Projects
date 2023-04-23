@@ -1,0 +1,17 @@
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  overflow: hidden;
+
+  &__content {
+    height: 100%; //100% od parent elementa .bg-video.Npr parent je 20rem bilo bi 100% od parent el.znaci 20rem-a.
+    width: 100%;
+    object-fit: cover; // This property occupy this entire section but also while maintaining the aspect ratio. So, what object-fit: cover; will do is that the element,and so in this case, the video,will fill the entire parent while still maintaining its aspect ratio, okay?And the part of the video that then don't fit the parent element,they will simply be clipped off, okay?
+    // So, again, this is very similar to having background size set to cover where it tries to cover the entire element with the image.And so object-fit is similar to that,but instead of working with background images,it works with HTML elements, or videos in this case.But of course it would work just the same with images.
+  }
+}
