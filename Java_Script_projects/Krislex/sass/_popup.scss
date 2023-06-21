@@ -1,0 +1,147 @@
+.popup {
+  background-color: rgba($color-black, 0.8);
+  grid-column: full-start / full-end;
+
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  padding: 0;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+
+  @supports (-webkit-backdrop-filter: blur(10px)) or
+    (backdrop-filter: blur(10px)) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); // da bi background bio blur.
+    background-color: rgba($color-black, 0.3); // background svetlo sive boje.
+  }
+
+  // izbrisi ova 2 dole i vrati kao gore
+  // opacity: 1;
+  // visibility: visible;
+
+  // kada stavimo #popup u html na neko dugme on nam targetuje ovaj popup.
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // kada stisnemo na neko dugme gde smo zakacili u html-u anker element tj #popup, i hocemo da stilizujemo child element od popup-a, u ovom slucaju &__content da stvorimo efekat kao da se uvecava kontejner kada stisnemo dugme
+  &:target &__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    // i kada stisnemo dugme primenice se sve iz &__content i taj kontejner bice uvecan sa 0.25 na 1 i videce se
+  }
+
+  &__content {
+    display: grid;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.25);
+
+    // transform: translate(-50%, -50%) scale(1); // obrisi posle
+
+    width: 75%;
+    // height: 50rem; // for testing purpose
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+    border-radius: 3px;
+    display: table;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.7s 0.2s;
+    // namestili smo da je ovde kontejner taj smanjen na 0.25 i da se ne vidi
+
+    @media only screen and (max-width: $bp-largest) {
+      width: 75%;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 92%;
+    }
+  }
+
+  &__left {
+    width: 37%;
+    display: table-cell;
+
+    @media only screen and (max-width: $bp-largest) {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  &__right {
+    width: 63%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem;
+
+    @media only screen and (max-width: $bp-largest) {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    // da bi radilo u mozila pretrazivacu
+    -moz-column-count: 2;
+    -moz-column-gap: 4rem; // da sam stavio 4em, bilo bi 56px, zasto pa zato sto je 1em = 14px; jer je 1em = font-size tog elementa, sto je gore 1.4rem.
+    -moz-column-rule: 1px solid $color-grey-light-2;
+
+    column-count: 2;
+    column-gap: 4rem; //1em = 14px;
+    column-rule: 2px solid $color-grey-light-2;
+    hyphens: auto;
+
+    // da bi radilo u svim pretrazivacima
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+
+    @media only screen and (max-width: $bp-largest) {
+      font-size: 1.6rem;
+    }
+
+    @media only screen and (max-width: $bp-medium-large) {
+      font-size: 1.43rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.35rem;
+    }
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-primary;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+      line-height: 1;
+    }
+
+    &:hover {
+      color: $color-btn-close;
+    }
+  }
+}

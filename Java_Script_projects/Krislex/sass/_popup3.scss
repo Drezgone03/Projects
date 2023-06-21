@@ -1,0 +1,76 @@
+.newsletter {
+  display: grid;
+  background-color: rgba($color-black, 0.8);
+  grid-column: full-start / full-end;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  padding: 0;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+
+  &-content {
+    display: grid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1) rotate(720deg);
+    width: 40%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.8s 0.3s;
+
+    padding: 2.5rem;
+    font-size: $default-font-size;
+    // namestili smo da je ovde kontejner taj smanjen na 0.15 i da se ne vidi
+
+    @media only screen and (max-width: $bp-medium-large) {
+      width: 60%;
+      padding: 4rem 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      width: 70%;
+      padding: 3rem 2rem;
+    }
+  }
+
+  // kada stavimo #popup_3 u html na neko dugme on nam targetuje ovaj popup.
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // kada stisnemo na neko dugme gde smo zakacili u html-u anker element tj #popup, i hocemo da stilizujemo child element od popup-a, u ovom slucaju &__content da stvorimo efekat kao da se uvecava kontejner kada stisnemo dugme
+  &:target &-content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1) rotate(0deg);
+    // i kada stisnemo dugme primenice se sve iz &__content i taj kontejner bice uvecan sa 0.25 na 1 i videce se
+  }
+
+  &-close {
+    &:link,
+    &:visited {
+      color: $color-primary;
+      position: absolute;
+      top: 0.5rem;
+      right: 1.5rem;
+      font-size: 2.5rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+      line-height: 1;
+    }
+
+    &:hover {
+      color: $color-btn-close;
+    }
+  }
+}

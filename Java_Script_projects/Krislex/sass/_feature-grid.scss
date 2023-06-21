@@ -1,0 +1,57 @@
+.feature-grid {
+  // background-color: $color-primary5;
+  background-image: linear-gradient(
+    to left,
+    $color-primary-light,
+    $color-primary-dark
+  );
+
+  grid-column: col-start 1 / col-end 10; // center-start / center-end; //full-start / full-end;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(26.5rem, 1fr));
+
+  margin: 15rem 0 10rem;
+  grid-gap: 7rem 10rem;
+  align-items: start;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-column: 1 / -1;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-column: col-start 1 / col-end 10;
+  }
+
+  @media only screen and (max-width: $bp-largest) {
+    grid-template-columns: repeat(auto-fit, minmax(29.5rem, 1fr));
+    grid-gap: 8rem 6rem;
+  }
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+
+  &__icon {
+    // fill: $color-primary; // da se obojaju ikonice
+    fill: $color-white;
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1 / span 2;
+    transform: translateY(-1rem);
+
+    @media only screen and (max-width: $bp-small) {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.65rem;
+    font-family: "Josefin Sans";
+    color: $color-white; // dodao ovu boju
+  }
+}
