@@ -42,7 +42,7 @@
     }
   }
 
-  // kada stavimo #popup_3 u html na neko dugme on nam targetuje ovaj popup.
+  // kada stavimo #popup_3 u html na neko dugme on nam targetuje ovaj popup
   &:target {
     opacity: 1;
     visibility: visible;
