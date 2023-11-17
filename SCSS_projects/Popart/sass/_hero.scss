@@ -1,0 +1,366 @@
+.hero {
+  padding: 172px 0 93px;
+
+  &__container {
+    padding-left: 60px;
+    position: relative;
+  }
+
+  &__title {
+    margin-bottom: 17px;
+    h1 {
+      span {
+        color: $color-green-yellow;
+      }
+    }
+  }
+  &__content {
+    max-width: 660px;
+    margin-left: auto;
+    p {
+      margin-bottom: 29px;
+    }
+  }
+
+  &__platforms {
+    position: fixed;
+    top: 258px;
+    right: 36px;
+    z-index: 9991;
+
+    display: flex;
+    flex-direction: column;
+
+    .pl-1 {
+      margin-bottom: 24px;
+
+      &:hover,
+      &:active {
+        transform: scale(1.5);
+      }
+    }
+  }
+
+  .vectors-seven {
+    position: relative;
+
+    .hd-1 {
+      position: absolute;
+      top: 65px;
+      left: -85px;
+    }
+
+    .hd-2 {
+      position: absolute;
+      top: -80px;
+      left: 450px;
+    }
+
+    .hd-3 {
+      position: absolute;
+      top: 93px;
+      right: 830px;
+    }
+
+    .hd-4 {
+      position: absolute;
+      top: -25px;
+      right: 366px;
+    }
+
+    .hd-5 {
+      position: absolute;
+      top: -618px;
+      right: 750px;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .hero {
+    .vectors-seven {
+      position: relative;
+
+      .hd-1 {
+        position: absolute;
+        top: 50px;
+        left: -80px;
+      }
+
+      .hd-2 {
+        position: absolute;
+        top: -130px;
+        left: 80px;
+      }
+
+      .hd-3 {
+        position: absolute;
+        top: 128px;
+        left: 243px;
+      }
+
+      .hd-4 {
+        position: absolute;
+        top: -25px;
+        right: 361px;
+      }
+
+      .hd-5 {
+        position: absolute;
+        top: -720px;
+        left: 360px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .hero {
+    .vectors-seven {
+      position: relative;
+
+      .hd-1 {
+        display: none;
+      }
+
+      .hd-2 {
+        position: absolute;
+        top: -130px;
+        left: 80px;
+      }
+
+      .hd-3 {
+        position: absolute;
+        top: 128px;
+        right: 743px;
+      }
+
+      .hd-4 {
+        position: absolute;
+        top: -25px;
+        right: 380px;
+        height: 60px;
+        width: 60px;
+      }
+
+      .hd-5 {
+        position: absolute;
+        top: -720px;
+        right: 670px;
+        height: 60px;
+        width: 60px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .hero {
+    padding: 120px 0 80px;
+
+    &__container {
+      padding-left: 0;
+    }
+
+    .vectors-seven {
+      position: relative;
+
+      .hd-1 {
+        display: none;
+      }
+
+      .hd-2 {
+        position: absolute;
+        top: -130px;
+        left: 65px;
+      }
+
+      .hd-3 {
+        position: absolute;
+        top: 90px;
+        left: 160px;
+      }
+
+      .hd-4 {
+        position: absolute;
+        top: -25px;
+        right: 380px;
+        height: 60px;
+        width: 60px;
+      }
+
+      .hd-5 {
+        position: absolute;
+        top: -600px;
+        left: 265px;
+        height: 50px;
+        width: 50px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero {
+    padding: 60px 0;
+
+    &__container {
+      padding-left: 0;
+    }
+
+    &__content {
+      p {
+        margin-left: 180px;
+        max-width: 70%;
+      }
+    }
+
+    &__platforms {
+      top: 160px;
+      right: 12px;
+      margin-left: 15px;
+    }
+
+    .vectors-seven {
+      position: relative;
+
+      .hd-1 {
+        display: none;
+      }
+
+      .hd-2 {
+        display: none;
+      }
+
+      .hd-3 {
+        position: absolute;
+        top: 55px;
+        left: 70px;
+        height: 20px;
+      }
+
+      .hd-4 {
+        position: absolute;
+        top: -25px;
+        right: 380px;
+        height: 60px;
+        width: 60px;
+      }
+
+      .hd-5 {
+        position: absolute;
+        top: -440px;
+        left: 185px;
+        height: 40px;
+        width: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hero {
+    .vectors-seven {
+      position: relative;
+
+      .hd-1 {
+        display: none;
+      }
+
+      .hd-2 {
+        display: none;
+      }
+
+      .hd-3 {
+        display: none;
+      }
+
+      .hd-4 {
+        position: absolute;
+        top: -8px;
+        right: 255px;
+        height: 50px;
+        width: 50px;
+      }
+
+      .hd-5 {
+        position: absolute;
+        top: -363px;
+        left: 145px;
+        height: 35px;
+        width: 35px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .hero {
+    &__content {
+      p {
+        margin-left: 136px;
+        max-width: 70%;
+      }
+    }
+
+    .vectors-seven {
+      position: relative;
+
+      .hd-1 {
+        display: none;
+      }
+
+      .hd-2 {
+        display: none;
+      }
+
+      .hd-3 {
+        display: none;
+      }
+
+      .hd-4 {
+        position: absolute;
+        top: -11px;
+        right: 150px;
+        height: 45px;
+        width: 45px;
+      }
+
+      .hd-5 {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .hero {
+    .vectors-seven {
+      position: relative;
+
+      .hd-1 {
+        display: none;
+      }
+
+      .hd-2 {
+        display: none;
+      }
+
+      .hd-3 {
+        display: none;
+      }
+
+      .hd-4 {
+        position: absolute;
+        top: -11px;
+        right: 107px;
+        height: 45px;
+        width: 45px;
+      }
+
+      .hd-5 {
+        display: none;
+      }
+    }
+  }
+}

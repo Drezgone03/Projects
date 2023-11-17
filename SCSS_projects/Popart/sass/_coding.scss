@@ -1,0 +1,21 @@
+.coding {
+  padding: 168px 0 243px;
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .coding {
+    padding: 120px 0 180px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .coding {
+    padding: 40px 0 100px;
+  }
+}

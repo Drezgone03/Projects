@@ -1,0 +1,43 @@
+body {
+  font-family: $font-futura;
+  font-size: $default-font-size; //30px
+  line-height: $default-line-height; //33px
+  color: $color-white;
+  background-color: $color-purple;
+  html {
+    overflow-x: hidden;
+  }
+  overflow-x: hidden;
+}
+
+.main {
+  padding-top: 86px;
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+  .main {
+    padding-top: 79px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 22px;
+  }
+  .main {
+    padding-top: 106px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  body {
+    font-size: 20px;
+  }
+  .main {
+    padding-top: 89px;
+  }
+}

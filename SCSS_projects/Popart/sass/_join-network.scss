@@ -1,0 +1,43 @@
+.join-network {
+  &__title {
+    margin-bottom: 57px;
+    h2 {
+      span {
+        color: $color-green-yellow;
+      }
+    }
+  }
+
+  &__pic {
+    margin-bottom: 143px;
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .join-network {
+    &__title {
+      margin-bottom: 40px;
+    }
+
+    &__pic {
+      margin-bottom: 120px;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .join-network {
+    &__title {
+      margin-bottom: 40px;
+    }
+
+    &__pic {
+      margin-bottom: 60px;
+    }
+  }
+}

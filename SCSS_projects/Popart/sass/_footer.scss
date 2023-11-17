@@ -1,0 +1,154 @@
+.footer {
+  &__container {
+    display: flex;
+    margin-bottom: 100px;
+    position: relative;
+  }
+
+  &__logo {
+    margin-right: 153px;
+  }
+
+  &__nav {
+    margin-right: 120px;
+    li + li {
+      margin-top: 16px;
+    }
+  }
+  &__nav li:hover {
+    color: $color-pink;
+  }
+
+  &__platforms {
+    display: flex;
+    gap: 20px;
+
+    li,
+    a {
+      font-size: 0;
+      line-height: 1;
+    }
+
+    li + li {
+      margin-top: 20px;
+    }
+  }
+
+  &__copyright {
+    display: block;
+    text-align: center;
+    margin-bottom: 19px;
+  }
+
+  &__copyr span:hover {
+    color: $color-pink;
+  }
+}
+
+.footer__image {
+  position: relative;
+  width: 100%;
+
+  img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .footer__image {
+    img {
+      right: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .footer {
+    &__logo {
+      margin-right: 100px;
+    }
+
+    &__nav {
+      margin-right: 100px;
+    }
+  }
+
+  .footer__image {
+    img {
+      right: 10px;
+      width: 24%;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .footer__image {
+    img {
+      right: -63px;
+      top: -265px;
+      width: 28%;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    &__container {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+
+    &__logo {
+      flex: 1 1 100%;
+      text-align: center;
+      margin-bottom: 60px;
+      margin-right: 0;
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    &__nav {
+      margin-right: 0;
+      padding: 0 40px;
+    }
+
+    &__platforms {
+      margin-right: 0;
+      padding: 0 40px;
+    }
+
+    &__image {
+      // display: none;
+      img {
+        right: -70px;
+        top: -190px;
+        width: 26%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer {
+    &__image {
+      // display: none;
+      img {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .footer {
+    &__copyr {
+      font-size: 18px;
+    }
+  }
+}

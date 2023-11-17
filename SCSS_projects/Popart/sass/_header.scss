@@ -1,0 +1,27 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 26px 0 20px;
+  z-index: 9990;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &.sticky {
+    backdrop-filter: blur(20px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    padding: 16px 0;
+    &__container {
+      display: block;
+    }
+  }
+}

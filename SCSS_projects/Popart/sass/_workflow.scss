@@ -1,0 +1,273 @@
+.workflow {
+  &__container {
+    padding-left: 30px;
+  }
+
+  &__title {
+    margin-bottom: 57px;
+  }
+
+  .vectors-one {
+    position: relative;
+
+    .vrc-1 {
+      position: absolute;
+      top: -290px;
+      left: -165px;
+    }
+
+    .vrc-2 {
+      position: absolute;
+      top: -220px;
+      right: 370px;
+    }
+
+    .vrc-3 {
+      position: absolute;
+      top: -290px;
+      right: -165px;
+    }
+
+    .vrc-4 {
+      position: absolute;
+      bottom: -870px;
+      right: -130px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    margin-bottom: 416px;
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+    img:not(.workflow__play-btn) {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .workflow {
+    .vectors-one {
+      position: relative;
+
+      .vrc-1 {
+        position: absolute;
+        top: -400px;
+        left: -31px;
+      }
+
+      .vrc-2 {
+        position: absolute;
+        top: -229px;
+        right: 382px;
+      }
+
+      .vrc-3 {
+        position: absolute;
+        top: -440px;
+        right: -30px;
+      }
+
+      .vrc-4 {
+        position: absolute;
+        bottom: -785px;
+        right: -10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .workflow {
+    &__image {
+      margin-bottom: 216px;
+    }
+
+    .vectors-one {
+      position: relative;
+
+      .vrc-1 {
+        position: absolute;
+        top: -355px;
+        left: -31px;
+        height: 70px;
+      }
+
+      .vrc-2 {
+        position: absolute;
+        top: -224px;
+        right: 150px;
+      }
+
+      .vrc-3 {
+        display: none;
+      }
+
+      .vrc-4 {
+        position: absolute;
+        bottom: -660px;
+        right: -10px;
+        height: 70px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .workflow {
+    &__container {
+      padding-left: 0;
+    }
+    &__image {
+      margin-bottom: 240px;
+    }
+
+    .vectors-one {
+      position: relative;
+
+      .vrc-1 {
+        position: absolute;
+        top: -340px;
+        left: 0;
+        height: 70px;
+      }
+
+      .vrc-2 {
+        position: absolute;
+        top: -193px;
+        right: 140px;
+      }
+
+      .vrc-3 {
+        display: none;
+      }
+
+      .vrc-4 {
+        position: absolute;
+        bottom: -560px;
+        right: -10px;
+        height: 70px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .workflow {
+    &__image {
+      margin-bottom: 160px;
+    }
+    &__play-btn {
+      max-width: 50px;
+      height: auto;
+    }
+
+    .vectors-one {
+      position: relative;
+
+      .vrc-1 {
+        position: absolute;
+        top: -270px;
+        left: -10px;
+        height: 70px;
+      }
+
+      .vrc-2 {
+        position: absolute;
+        top: -161px;
+        right: 151px;
+        height: 50px;
+      }
+
+      .vrc-3 {
+        display: none;
+      }
+
+      .vrc-4 {
+        position: absolute;
+        bottom: -460px;
+        right: -10px;
+        height: 70px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .workflow {
+    &__image {
+      margin-bottom: 120px;
+    }
+
+    .vectors-one {
+      position: relative;
+
+      .vrc-1 {
+        position: absolute;
+        top: -230px;
+        left: 5px;
+        height: 60px;
+      }
+
+      .vrc-2 {
+        position: absolute;
+        top: -122px;
+        right: 133px;
+        height: 40px;
+      }
+
+      .vrc-3 {
+        display: none;
+      }
+
+      .vrc-4 {
+        position: absolute;
+        bottom: -360px;
+        right: 5px;
+        height: 60px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .workflow {
+    .vectors-one {
+      position: relative;
+
+      .vrc-1 {
+        display: none;
+      }
+
+      .vrc-2 {
+        position: absolute;
+        top: -105px;
+        right: 16px;
+        height: 35px;
+      }
+
+      .vrc-3 {
+        display: none;
+      }
+
+      .vrc-4 {
+        position: absolute;
+        bottom: -265px;
+        right: 25px;
+        height: 50px;
+      }
+    }
+  }
+}

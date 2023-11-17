@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Aspergit";
+  src: url("../fonts/AspergitBold.eot");
+  src: url("../fonts/AspergitBold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/AspergitBold.woff2") format("woff2"),
+    url("../fonts/AspergitBold.woff") format("woff"),
+    url("../fonts/AspergitBold.ttf") format("truetype"),
+    url("../fonts/AspergitBold.svg#AspergitBold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aspergit";
+  src: url("../fonts/AspergitBoldItalic.eot");
+  src: url("../fonts/AspergitBoldItalic.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/AspergitBoldItalic.woff2") format("woff2"),
+    url("../fonts/AspergitBoldItalic.woff") format("woff"),
+    url("../fonts/AspergitBoldItalic.ttf") format("truetype"),
+    url("../fonts/AspergitBoldItalic.svg#AspergitBoldItalic") format("svg");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("../fonts/FuturaPT-Light.eot");
+  src: url("../fonts/FuturaPT-Light.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/FuturaPT-Light.woff2") format("woff2"),
+    url("../fonts/FuturaPT-Light.woff") format("woff"),
+    url("../fonts/FuturaPT-Light.ttf") format("truetype"),
+    url("../fonts/FuturaPT-Light.svg#FuturaPT-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+// COLORS
+$color-black: #000;
+$color-white: #fff;
+$color-grey-white: #f9f9f9;
+$color-purple: #361281;
+$color-green-yellow: #d5ff2f;
+$color-pink: #ff2473;
+$color-orange: #ff6f1f;
+$color-light-blue: #54f2f2;
+
+// FONT
+$font-futura: "Futura PT";
+$font-aspergit: "Aspergit";
+
+$default-font-size: 30px;
+$default-line-height: 33px;
